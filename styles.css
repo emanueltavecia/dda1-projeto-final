@@ -1,0 +1,408 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  transition: all 300ms;
+}
+
+:root {
+  --primary: #7c4dff;
+  --secondary: #b388ff;
+  --text: #333;
+  --background: #fff;
+  --light: #f5f5f5;
+  --accent: #ff80ab;
+  --card-bg: #fff;
+  --shadow: rgba(0, 0, 0, 0.1);
+}
+
+[data-theme='dark'] {
+  --primary: #7a4ed8;
+  --secondary: #b388ff;
+  --text: #e0e0e0;
+  --background: #121212;
+  --light: #1e1e1e;
+  --accent: #ff80ab;
+  --card-bg: #242424;
+  --shadow: rgba(255, 255, 255, 0.1);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  line-height: 1.6;
+  color: var(--text);
+  background: var(--background);
+}
+
+body,
+input,
+textarea,
+button {
+  font-family: sans-serif;
+}
+
+h1,
+h2 {
+  font-family: serif;
+  font-weight: 700;
+}
+
+header {
+  background: var(--primary);
+  color: white;
+  padding: 1rem 2rem;
+  position: fixed;
+  width: 100%;
+  z-index: 100;
+  box-shadow: 0 2px 10px var(--shadow);
+}
+
+nav {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  color: white;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+nav h2 {
+  text-align: center;
+  line-height: 115%;
+}
+
+nav ul {
+  display: flex;
+  list-style: none;
+  gap: 2rem;
+  margin-top: 2px;
+}
+
+nav a {
+  position: relative;
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  padding-bottom: 3px;
+}
+
+nav a::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: var(--accent);
+  transition: all 300ms;
+}
+
+nav a:hover::after {
+  width: 100%;
+}
+
+main {
+  padding: 5rem 2rem 1rem;
+}
+
+main > section {
+  padding: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+#hero {
+  min-height: 90vh;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 4rem;
+  padding-inline: 0;
+}
+
+#hero article {
+  flex: 1;
+}
+
+#hero h1 {
+  font-size: 3rem;
+  margin-bottom: 1.5rem;
+  color: var(--primary);
+  line-height: 1.2;
+}
+
+#hero p {
+  font-size: 1.3rem;
+  margin-bottom: 2.5rem;
+  opacity: 0.9;
+}
+
+#hero img {
+  flex: 1;
+  width: 50%;
+  border-radius: 24px;
+  border-bottom-right-radius: 0;
+}
+
+.btn {
+  display: inline-block;
+  padding: 1.2rem 2.5rem;
+  background: var(--primary);
+  color: white;
+  text-decoration: none;
+  border-radius: 50px;
+  box-shadow: 0 4px 15px rgba(124, 77, 255, 0.3);
+  font-weight: 500;
+  font-size: 1.15rem;
+}
+
+.btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(124, 77, 255, 0.4);
+  background: var(--secondary);
+}
+
+#sobre {
+  background: var(--light);
+  border-radius: 24px;
+  margin: 2rem auto;
+}
+
+#sobre article {
+  display: flex;
+  gap: 4rem;
+  align-items: center;
+}
+
+#sobre img {
+  flex-shrink: 0;
+  width: 45%;
+  height: 450px;
+  object-fit: cover;
+  border-radius: 16px;
+  border-bottom-right-radius: 0;
+  box-shadow: 0 10px 30px var(--shadow);
+}
+
+#servicos {
+  text-align: center;
+}
+
+#servicos h2 {
+  color: var(--primary);
+  margin-bottom: 3rem;
+}
+
+#servicos article {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+#servicos section {
+  max-width: 320px;
+  background: var(--card-bg);
+  padding: 2rem;
+  border-radius: 16px;
+  border-bottom-right-radius: 0;
+  box-shadow: 0 5px 20px var(--shadow);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+#servicos section:hover {
+  transform: translateY(-10px);
+}
+
+section h2 {
+  font-size: 2.8rem;
+  margin-bottom: 2rem;
+  color: var(--primary);
+  text-align: center;
+}
+
+#contato {
+  max-width: 672px;
+  background: var(--light);
+  border-radius: 20px;
+  margin: 6rem auto 2rem;
+}
+
+#contato form {
+  max-width: 600px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+#contato input,
+#contato textarea {
+  padding: 1.2rem;
+  border: 2px solid transparent;
+  border-radius: 10px;
+  font-size: 1rem;
+  background: var(--card-bg);
+  color: var(--text);
+}
+
+#contato input:focus,
+#contato textarea:focus {
+  border-color: var(--primary);
+  outline: none;
+}
+
+#contato textarea {
+  height: 150px;
+  resize: vertical;
+}
+
+#contato button {
+  padding: 1.2rem;
+  background: var(--primary);
+  color: white;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 1.1rem;
+  font-weight: 500;
+  box-shadow: 0 4px 15px var(--shadow);
+}
+
+#contato button:hover {
+  background: var(--secondary);
+  transform: translateY(-2px);
+}
+
+#sobre,
+#servicos,
+#contato {
+  scroll-margin-top: 100px;
+}
+
+footer {
+  background: var(--primary);
+  color: white;
+  text-align: center;
+  padding: 3rem 2rem;
+  position: relative;
+}
+
+.theme-toggle {
+  width: 130px;
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: none;
+  border: 2px solid white;
+  color: white;
+  padding: 0.5rem;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+.theme-toggle:hover {
+  background: white;
+  color: var(--primary);
+}
+
+@media (max-width: 768px) {
+  header {
+    padding: 1rem;
+  }
+
+  nav {
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  #menu-toggle {
+    display: block;
+  }
+
+  nav ul {
+    flex-direction: column;
+    text-align: center;
+    display: none;
+    gap: 0.5rem;
+  }
+
+  nav.active ul {
+    display: flex;
+  }
+
+  #hero {
+    flex-direction: column;
+    text-align: center;
+    padding: 2rem 0;
+    min-height: auto;
+  }
+
+  #hero img {
+    min-height: 200px;
+    width: 100%;
+  }
+
+  #hero h1 {
+    font-size: 2.5rem;
+  }
+
+  #hero p {
+    font-size: 1.15rem;
+  }
+
+  main {
+    padding-top: 8rem;
+  }
+
+  main > section {
+    padding: 1.5rem;
+  }
+
+  section h2 {
+    font-size: 2rem;
+  }
+
+  #sobre article {
+    flex-direction: column;
+    text-align: center;
+    gap: 2rem;
+  }
+
+  #sobre img {
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+    min-height: 200px;
+  }
+
+  #sobre,
+  #servicos,
+  #contato {
+    scroll-margin-top: 140px;
+  }
+
+  footer {
+    padding: 2rem 1rem;
+  }
+
+  .theme-toggle {
+    position: static;
+    margin-bottom: 1.5rem;
+  }
+}
